@@ -20,9 +20,9 @@ app.get('/', (req, res) => {
 
 app.post('/logged', function (req, res) {
     const { body: data } = req
-    User.create(data)
+    const user = User.create(data)
 
-    return res.send(data)
+    return res.json(user)
 })
 
 app.listen(process.env.PORT, () => {
